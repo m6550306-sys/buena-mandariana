@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buena Mandarina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-orange-600 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" onclick="showSection('inicio')" class="flex-shrink-0">
+                    <img src="bm/logo.jpeg" alt="" class="h-10">
+                </a>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-4">
+                    <a href="#" onclick="showSection('inicio')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
+                    <a href="#" onclick="showSection('puzzles')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Puzzles</a>
+                    <a href="#" onclick="showSection('didacticos-primera-infancia')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Didácticos Primera Infancia</a>
+                       <a href="#" onclick="showSection('producto1')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Estación de Servicios</a>
+                          <a href="#" onclick="showSection('producto2')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Juegos de Mesas</a>
+                                <a href="#" onclick="showSection('playa')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Playa</a>
+         <div class="relative dropdown">
+                        <a href="#" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rodados <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-menu hidden absolute z-10 mt-2 bg-white rounded-md shadow-lg py-1 w-48">
+                            <a href="#" onclick="showSection('rodados-chicos')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rodados Chicos</a>
+                            <a href="#" onclick="showSection('rodados-medianos')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rodados Medianos</a>
+                            <a href="#" onclick="showSection('rodados-grandes')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rodados Grandes</a>
+                        </div>
+                    </div>
+                    <div class="relative dropdown">
+                        <a href="#" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Línea de Juegos <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-menu hidden absolute z-10 mt-2 bg-white rounded-md shadow-lg py-1 w-48">
+                            <a href="#" onclick="showSection('linea-hogar')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Hogar</a>
+                            <a href="#" onclick="showSection('linea-masas')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Masas</a>
+                            <a href="#" onclick="showSection('linea-brocks')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Blocks</a>
+                            <a href="#" onclick="showSection('linea-minis')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Minis</a>
+                            <a href="#" onclick="showSection('linea-juegos')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Juegos</a>
+                            <a href="#" onclick="showSection('linea-taller')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Taller</a>
+                            <a href="#" onclick="showSection('linea-jardin')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Línea Jardín</a>
+                        </div>
+                    </div>
+                    <a href="#" onclick="showSection('contacto')" class="nav-link text-white hover:text-orange-200 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contacto</a>
+                </div>
+                
+                <div class="sm:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-orange-200 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="sm:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="showSection('inicio')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Inicio</a>
+                <a href="#" onclick="showSection('puzzles')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Puzzles</a>
+                <a href="#" onclick="showSection('didacticos-primera-infancia')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Didácticos Primera Infancia</a>
+                <a href="#" onclick="showSection('producto1')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Estación de Servicios</a>
+                 <a href="#" onclick="showSection('producto2')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Juegos de Mesa</a>
+                    <a href="#" onclick="showSection('playa')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Playa</a>
+                <div class="relative dropdown">
+                    <a href="#" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Rodados<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu hidden mt-2 bg-gray-700 rounded-md shadow-lg py-1">
+                        <a href="#" onclick="showSection('rodados-chicos')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Rodados Chicos</a>
+                        <a href="#" onclick="showSection('rodados-medianos')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Rodados Medianos</a>
+                        <a href="#" onclick="showSection('rodados-grandes')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Rodados Grandes</a>
+                    </div>
+                </div>
+                <div class="relative dropdown">
+                    <a href="#" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Línea de Juegos <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu hidden mt-2 bg-gray-700 rounded-md shadow-lg py-1">
+                        <a href="#" onclick="showSection('linea-hogar')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Hogar</a>
+                        <a href="#" onclick="showSection('linea-masas')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Masas</a>
+                        <a href="#" onclick="showSection('linea-brocks')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Blocks</a>
+                        <a href="#" onclick="showSection('linea-minis')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Minis</a>
+                        <a href="#" onclick="showSection('linea-juegos')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Juegos</a>
+                        <a href="#" onclick="showSection('linea-taller')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Taller</a>
+                        <a href="#" onclick="showSection('linea-jardin')" class="block px-4 py-2 text-sm text-white hover:bg-gray-600">Línea Jardín</a>
+                    </div>
+                </div>
+                <a href="#" onclick="showSection('contacto')" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-orange-200 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="content" class="pt-16">
+        
+        <section id="inicio" class="section active bg-cover bg-center h-[calc(100vh-64px)] flex items-center justify-center text-center" style="background-image: url('bm/fondo web.jpeg');">
+            <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white">Juguetería Buena Mandarina</h1>
+                <p class="mt-4 text-lg text-white font-semibold">Despertando sonrisas, creando recuerdos.</p>
+                <p class="mt-2 text-lg text-white font-bold">Mayorista Duravit</p>
+                <a href="#" onclick="showSection('novedades')" class="mt-8 inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-lg font-bold hover:bg-orange-700 transition-colors">Explora Nuestras Novedades!</a>
+            </div>
+        </section>
+
+        <section id="novedades" class="section hidden bg-gray-50 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-orange-800 mb-10">¡Nuestras Novedades!</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"> 
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/54.jpg" alt="Producto Novedad 1" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">PUZZLE LA SELVA 8 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/54</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$2.463</p> 
+                        </div> 
+                    </div> 
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/55.jpg" alt="Producto Novedad 2" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">PUZZLE LA GRANJA 8 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/55</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$2.463</p> 
+                        </div> 
+                    </div> 
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/280.jpg" alt="Producto Novedad 3" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">MOTO FUEGO</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/280</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$25.059</p> 
+                        </div> 
+                    </div> 
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/281.jpg" alt="Producto Novedad 4" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">MOTO UNICORNIO</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/281</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$25.059</p> 
+                        </div> 
+                    </div> 
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/370.jpg" alt="Producto Novedad 5" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">CEMENTERO</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/370</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$2.293</p> 
+                        </div> 
+                    </div> 
+                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/371.jpg" alt="Producto Novedad 4" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">BASURERO MINI</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/371</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$2.293</p> 
+                        </div> 
+                    </div> 
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"> 
+                        <img src="bm/698.jpg" alt="Producto Novedad 5" class="h-64 w-full object-cover"> 
+                        <div class="p-4 text-center"> 
+                            <h3 class="font-bold text-lg text-orange-700 mb-1">MI PRIMERA PISTA</h3> 
+                            <p class="text-gray-600 text-sm">Código: dur/698</p> 
+                            <p class="text-orange-600 font-extrabold text-xl mt-2">$8.383</p> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+     <section id="puzzles" class="section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Puzzles</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/1.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">PUZZLE PATAGONIA</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/1</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/2.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE NUMEROS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/2</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/3.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE GRANJA CUADRADO 24 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/3</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.979</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/4.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ZOO CUADRADO 24 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/4</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.979</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/5.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE TRANSPORTES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/5</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/6.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE GRANJA Y ZOO 25 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/6</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.579</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/7.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ABECEDARIO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/7</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/9.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE GRANDE DINOSAURIO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/9</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/10.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE GRANJA MODELO 2</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/10</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/15.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE OFICIOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/15</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.407</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/16.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ACUARIO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/16</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/17.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ARCA DE NOE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/17</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/18.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE CONSTRUCTOR GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/18</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/19.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE CONSTRUCTOR CHICO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/19</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/21.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE FAUNA ANTARTIDA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/21</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.979</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/22.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ZOO 2</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/22</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/23.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE AUTOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/23</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/24.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE PATAGONIA X 24 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/24</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.979</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/29.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ACUARIO 2</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/29</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/30.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ACUARIO X 25 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/30</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/31.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE DEPORTES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/31</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/32.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE CLASICOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/32</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/33.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE FAUNA MISIONERA X 24 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/33</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.979</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/41.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE MI PRINCESA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/41</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/42.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE MI PRINCESA 2</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/42</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/43.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE CIRCO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/43</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.729</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/44.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE PRINCESA 3</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/44</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/45.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE TRES CHANCHITOS CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/45</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.019</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/47.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE CENICIENTAS CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/47</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.019</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/48.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE PIRATAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/48</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/49.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE BOMBEROS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/49</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/50.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE PRINCESAS X 4</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/50</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/51.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE PARQUE DIVERSIONES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/51</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.979</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/557.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE ZOO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/557</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/559.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PUZZLE GRANJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/559</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.375</p> 
+                        </div> 
+                    </div> 
+
+                </div>
+            </div>
+        </section>
+
+      <section id="producto1" class="section hidden">
+                       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Estación de Servicios</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/699.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">EST.SERV.ELEV.2 RAMPAS PISTAS</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/699</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$24.213</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/700.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EST.SERV.ELEV.4 RAMPAS PISTAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/700</p> 
+                            <p class="text-orange-600 font-bold text-xl">$33.362</p> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section id="producto2" class="section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Juegos de Mesa</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/11.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">MEMORIA CAJA</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/11</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$5.028</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/12.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MOMORIA BLISTER</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/12</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.407</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/13.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">DOMINO GRANJA BLISTER</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/13</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/14.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">DOMINO ZOO BLISTER</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/14</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.463</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/20.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">LOTERIA CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/20</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.111</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/34.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">DOMINO PIRATAS CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/34</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.543</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/35.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">DOMINO PAYASOS CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/35</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.543</p> 
+                        </div> 
+                    </div> 
+                     </div>
+            </div>
+        </section>
+
+       <section id="didacticos-primera-infancia" class="section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Didacticos Primera Infancia</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/552.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">BARCO FLOTADOR</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/522</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$6.327</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/625.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">VAGON PRIMERAS FORMAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/625</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.113</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/626.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">LOCOMOTORA DIDACTICA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/626</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.661</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/627.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TREN DIDACTICO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/627</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.643</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/628.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">AROS MORDILLO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/628</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.663</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/630.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DEL CAMPO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/630</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.343</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/653.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PIRAMIDE ANILLOS APILABLES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/653</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.221</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/656.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE PRIMERAS FORMAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/656</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.211S</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/657.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE TORRE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/657</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.356</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/658.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE TORRE MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/658</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.253</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/659.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE NUMEROS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/659</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.211</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/666.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CUBO PRIMERAS FORMAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/666</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.013</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/667.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DIDACTICO 3 EN 1 TORRE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/667</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.447</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/668.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDECITOS DIDACTICOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/668</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.128</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/669.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SONAJERO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/669</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.767</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/670.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MORDILLO LLAVES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/670</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.411</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/671.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SONAJERO Y MORDILLO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/671</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.483</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/672.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DIDACTICO GRANDE 2 EN 1</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/672</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.429</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/673.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DIDACTICO 3 EN 1 CASCABEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/673</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.285</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/676.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO DE RECORRIDO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/676</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.871</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/677.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE AGUA 3 EN 1</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/677</p> 
+                            <p class="text-orange-600 font-bold text-xl">$13.413</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/678.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">ANILLO Y SONAJERO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/678</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.573</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/679.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">GIMNASIO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/679</p> 
+                            <p class="text-orange-600 font-bold text-xl">$19.699</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+
+        <section id="playa" class="section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Playa</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/520.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">PALA RASTRILLO Y COLADOR MEDIANOS</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/520</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$1.049</p> 
+                        </div> 
+                    </div> 
+                
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/522.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CHICO PALITA RASTRILLO Y 1 MOLDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/522</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.333</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/523.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CHICO PALITA RASTRILLO COLADOR Y 1 MOLDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/523</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.836</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/524.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BARCO C/ BALDE MEDIANO PALITA RAST COLAD. Y 1 MOLDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/524</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.867</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/525.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO DE 4 MOLDES GRANDES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/525</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.196</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/526.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE MEDIANO PALITA RASTRILLO Y 1 MOLDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/526</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.380</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/527.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSON BALDE PALA RASTRILLO MEDIANO C/ CASTILLOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/527</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.657</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/528.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSON BALDE MEDIANO REGADERA BARCO Y PALAS X 3</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/528</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.170</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/529.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CHICO PALA RAST MEDIANOS Y CASTILLOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/529</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.805</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/530.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE MEDIANO A GRANEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/530</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.775</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/531.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSO BALDE MEDIANO PALITA RAST COLADOR Y 4 MOLDES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/531</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.934</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/532.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CANASTA PLAYA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/532</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.320</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/533.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE MEDIANO PALITA RAST COLADOR Y 1 MOLDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/533</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.579</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/534.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO DE PALITA Y RASTRILLO MEDIANO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/534</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.405</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/535.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PALA Y RASTRILLO MEDIANO CON 2 MOLDES GRANDES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/535</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.777</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/536.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO DE 4 MOLDES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/536</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.367</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/537.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CHICO PALA RAST MEDIANOS Y MOLINO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/537</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.353</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/538.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CHICO Y MOLINO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/538</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.984</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/539.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MOLINO A GRANEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/539</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.414</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/542.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSO BALDE PALA RAST GDE REGADERA Y 2 MOLDES GDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/542</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.721</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/543.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">REGADERA A GRANEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/543</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.104</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/544.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE MEDIANO C/ PALITA RASTRILLO Y REGADERA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/544</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.131</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/545.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSO BALDE MEDIANO COMPLETO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/545</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.866</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/555.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PALA Y RASTRILLO GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/555</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.701</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/560.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE PALA Y RASTRILLO MEDIANOS COLADOR Y REGADERA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/560</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.383</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/561.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE GRANDE PALA Y RASTRILLO MEDIANO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/561</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.538</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/562.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CASTILLO A GRANEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/562</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.112</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/563.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PALA GRANDE A GRANEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/563</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.535</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/564.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CASTILLO C/ PALA GDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/564</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.454</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/565.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CASTILLO PALA GDE Y REGADERA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/565</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.381</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/566.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE CASTILLO PALA Y RAST MED REGADERA 1 MOLDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/566</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.455</p> 
+                        </div> 
+                    </div> 
+                       </div>
+        </section>
+        <section id="rodados-chicos" class="section hidden">
+            <div class="container mx-auto px-4 py-8">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Rodados Chicos</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/200.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">CAMION C/ BALDE CHICO PALITA Y RASTRILLO</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/200</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$8.574</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/201.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION CHICO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/201</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.973</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/206.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EXCAVADORA CHICA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/206</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.973</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/208.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION CHICO C/ PALA Y RAST. MED</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/208</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.223</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/210.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRACTOR CHICO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/210</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.014</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/228.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CUATRICICLO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/228</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.567</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/450.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION GUINCHE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/450</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.973</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/650.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION BOMBERO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/650</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.973</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/651.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION CEMENTERO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/651</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.779</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/654.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION CHICO C/ BLOCKS BOLSO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/654</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.159</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+        
+        <section id="rodados-medianos" class="section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Rodados Medianos</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/207.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">SET BOMBEROS</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/207</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$10.629</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/209.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION CHICO CON VOLQUETE CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/209</p> 
+                            <p class="text-orange-600 font-bold text-xl">$12.592</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/217.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRACTOR CHICO C/ACOPLADO EN CAJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/217</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.410</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/219.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRACTOR TAMBERO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/219</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.880</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/220.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION MEDIANO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/220</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.345</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/221.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION MEDIANO PALA Y RASTRILLO MEDIANOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/221</p> 
+                            <p class="text-orange-600 font-bold text-xl">$12.515</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/222.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION MEDIANO CON BALDE COMPLETO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/222</p> 
+                            <p class="text-orange-600 font-bold text-xl">$14.407</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/224.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSO CAMION MED. BALDE PALA Y RASTRILLO GDE.</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/224</p> 
+                            <p class="text-orange-600 font-bold text-xl">$19.398</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/225.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION MEDIANO C/BLOCKS BOLSO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/225</p> 
+                            <p class="text-orange-600 font-bold text-xl">$15.918</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/230.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EXCAVADORA  N</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/230</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.998</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/231.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE NUMEROS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/231</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.211</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/232.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET N</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/232</p> 
+                            <p class="text-orange-600 font-bold text-xl">$18.749</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/234.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EXCAVADORA CAD</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/234</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.379</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/235.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">VOLCADOR CAD</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/235</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.379</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/451.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">VOLCADOR Y GUINCHE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/451</p> 
+                            <p class="text-orange-600 font-bold text-xl">$12.780</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/652.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRACTOR CHICO C/ARADO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/652</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.589</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+        
+        <section id="rodados-grandes" class="section hidden">
+            <div class="container mx-auto px-4 py-8">
+               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Rodados Grandes</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/202.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">CAMION GRANDE A GRANEL</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/202</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$21.200</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/203.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CONSTRUCTOR 4</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/203</p> 
+                            <p class="text-orange-600 font-bold text-xl">$21.664</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/204.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CONSTRUCTOR 1</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/204</p> 
+                            <p class="text-orange-600 font-bold text-xl">$13.317</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/205.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CONSTRUCTOR 2</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/205</p> 
+                            <p class="text-orange-600 font-bold text-xl">$28.703</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/211.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EXCAVADORA GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/211</p> 
+                            <p class="text-orange-600 font-bold text-xl">$15.507</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/212.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRACTOR GRANDE </h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/212</p> 
+                            <p class="text-orange-600 font-bold text-xl">$16.499</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/213.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRACTOR GDE. CON ACOPLADO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/213</p> 
+                            <p class="text-orange-600 font-bold text-xl">$25.710</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/214.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION TRANSPORTE C/ 2 AUTOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/214</p> 
+                            <p class="text-orange-600 font-bold text-xl">$30.117</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/215.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMION TRANSPORTE CHICO C/ 1 AUTO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/215</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.469</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/216.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SEMI HACIENDA C / ANIMALES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/216</p> 
+                            <p class="text-orange-600 font-bold text-xl">$11.566</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/218.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CONSTRUCTOR 3</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/218</p> 
+                            <p class="text-orange-600 font-bold text-xl">$31.513</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/229.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRANSPORTE CUATRICICLOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/229</p> 
+                            <p class="text-orange-600 font-bold text-xl">$29.169</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/233.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRANSPORTE CHICO CONSTRUCCION INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/233</p> 
+                            <p class="text-orange-600 font-bold text-xl">$13.707</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+
+        <section id="linea-hogar" class="section hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Línea Hogar</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/500.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">JUEGO DE TE CON BANDEJA</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/500</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$5.154</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/501.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO DE TE EN BALDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/501</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.136</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/502.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE LIMPIEZA CON PALA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/502</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.493</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/505.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE LIMPIEZA CON PALA Y BALDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/505</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.978</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/506.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CANASTA DE FRUTAS Y VERDURAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/506</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.710</p> 
+                        </div> 
+                    </div> 
+                       <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/507.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">SET DE FRUTAS Y VERDURAS</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/507</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$2.543</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/508.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PLANCHITA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/508</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.217</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/510.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">VALIJA JUEGO DE TE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/510</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.582</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/604.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CARRITO FRUTAS Y VERDURAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/604</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.228</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/608.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">COCHECITO DE MUÑECAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/608</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.721</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/609.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">CARRITO DE SUPERMERCADO</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/609</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$5.912</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/610.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">COCINA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/610</p> 
+                            <p class="text-orange-600 font-bold text-xl">$16.324</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/611.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">COCINA GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/611</p> 
+                            <p class="text-orange-600 font-bold text-xl">$26.216</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/612.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO SET DE COCINA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/612</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.304</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/613.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CANASTA SET COCINA Y TE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/613</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.011</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/614.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">ANAFE</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/614</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$6.483</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/615.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">KICHINETTE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/615</p> 
+                            <p class="text-orange-600 font-bold text-xl">$14.188</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/616.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">PIC-NIC</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/616</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.906</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/618.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE MATE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/618</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.728</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/619.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MATE EN BANDEJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/619</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.160</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+        
+        <section id="linea-masas" class="section hidden">
+            <div class="container mx-auto px-4 py-8">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Linea Masa</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/703.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">MASAS X 1 CHICA DISPLAY</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/703</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$514</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/704.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS X 1 GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/704</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.329</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/705.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS X 2 GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/705</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.615</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/706.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS X 4 GRANDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/706</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.919</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/707.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS X KILO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/707</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.183</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/708.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS C/ EXTRUSOR Y CORTANTE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/708</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.666</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/709.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PACK X 10 CHICO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/709</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.144</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/713.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS CON EXTRURSOR</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/713</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.340</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/715.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS BURGER KIT</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/715</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.095</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/716.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS CON SET DE OLLAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/716</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.766</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/717.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS MONSTRUOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/717</p> 
+                            <p class="text-orange-600 font-bold text-xl">$8.555</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/718.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS EN POTE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/718</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.193</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/719.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS CON SOLAPA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/719</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.250</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/720.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS EN VALIJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/720</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.168</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/721.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PACK ZOO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/721</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.612</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/722.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PACK GRANJA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/722</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.612</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/724.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS EN BALDE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/724</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.437</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/725.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PIZZA PARTY</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/725</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.538</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/726.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASA FELIZ CUMPLE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/726</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.383</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/727.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PANZOTAS KIDS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/727</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.347</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/728.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PANZOTAS DINOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/728</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.347</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/729.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS PACK KITCHEN</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/729</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.509</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/730.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS JUNIOR CHEF</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/730</p> 
+                            <p class="text-orange-600 font-bold text-xl">$15.142</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/731.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS MONIGOTES</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/731</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.522</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/732.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MASAS DINOSAURIOS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/732</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.453</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+
+        <section id="linea-brocks" class="section hidden">
+        <div class="container mx-auto px-4 py-8">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Linea Blocks</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/511.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">VALIJA BLOCKS</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/511</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$4.888</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/512.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MBALDE C/BLOCKS DIDACTICOS 18 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/512</p> 
+                            <p class="text-orange-600 font-bold text-xl">$7.336</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/550.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSO C/ BLOCKS DIDACTICOS 42 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/550</p> 
+                            <p class="text-orange-600 font-bold text-xl">$13.178</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/551.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSO C/ BLOCKS DIDACTICOS 100 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/551</p> 
+                            <p class="text-orange-600 font-bold text-xl">$27.893</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/553.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLDS BLOCK CHICOS 240 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/553</p> 
+                            <p class="text-orange-600 font-bold text-xl">$21.534</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/554.jpeg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE C/ BLOCKS DIDACTICOS 36 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/554</p> 
+                            <p class="text-orange-600 font-bold text-xl">$14.042</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/556.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JUEGO DE BLOCKS 30 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/556</p> 
+                            <p class="text-orange-600 font-bold text-xl">$10.288</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/660.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE BLOCK CHICOS 60 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/660</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.412</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/661.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE BLOCKS CHICOS 120 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/661</p> 
+                            <p class="text-orange-600 font-bold text-xl">$17.226</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/662.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE BLOCKS CHICOS 240 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/662</p> 
+                            <p class="text-orange-600 font-bold text-xl">$29.988</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/663.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSA BLOCKS CHICOS X 24 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/663</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.902</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/664.jpeg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOLSA BLOCKS CHICOS X 36 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/664</p> 
+                            <p class="text-orange-600 font-bold text-xl">$3.730</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/665.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BALDE BLOCKS CHICOS X 29 PIEZAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/719</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.922</p> 
+                        </div> 
+                    </div> 
+        </section>
+        
+        <section id="linea-minis" class="section hidden">
+            <div class="container mx-auto px-4 py-8">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Línea Minis</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/349.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">AUTOS F1</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/349</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$5.876</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/353.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CITROEN-VOLQUI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/353</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.269</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/354.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMIONETA MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/354</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.269</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/355.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">FORMULA 1 MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/355</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.269</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/356.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">JEEP MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/356</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.269</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/358.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MINI FRONTAL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/358</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/359.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">RETRO MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/359</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/360.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">FRONTAL Y RETRO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/360</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.335</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/361.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRAILER RETRO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/361</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.822</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/362.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">FRONTAL + TRILER + RETRO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/362</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.069</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/363.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EXCAVADORA MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/363</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/364.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BOMBERO MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/364</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/365.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">AMBULANCIA MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/365</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/366.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SEET DE EMERGENCIAS MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/366</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.335</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/367.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE BOMBEROS MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/367</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.335</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/368.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE POLICIA MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/368</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.335</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/369.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">POLICIA ESPECIAL MINI</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/369</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/680.jpeg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MINI FRONTAL INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/680</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/681.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">RETRO MINI INFALTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/681</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/682.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">FRONTAL Y RETRO INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/682</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.335</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/683.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">TRAILER RETRO INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/683</p> 
+                            <p class="text-orange-600 font-bold text-xl">$6.822</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/684.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">FRONTAL + TRAILER + RETRO INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/684</p> 
+                            <p class="text-orange-600 font-bold text-xl">$9.068</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/685.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">EXCAVADORA MINI INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/685</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/686.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CAMIONETA MINI INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/686</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/687.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SUV MINI INFANTIL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/687</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.293</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/710.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET MICRO</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/710</p> 
+                            <p class="text-orange-600 font-bold text-xl">$2.313</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/711.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">MICRO GRANEL</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/711</p> 
+                            <p class="text-orange-600 font-bold text-xl">$664</p> 
+                        </div> 
+                    </div> 
+        </section>
+
+        <section id="linea-juegos" class="section hidden">
+             <div class="container mx-auto px-4 py-8">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Linea de Juegos</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/404.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">JUEGOS DE BOWLING</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/404</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$7.179</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/406.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">set de golf</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/406</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.669</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+
+        <section id="linea-taller" class="section hidden">
+             <div class="container mx-auto px-4 py-8">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Línea Taller</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/410.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">MIS HERRAMIENTAS</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/410</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$3.671</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/411.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET DE HERRAMIENTAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/411</p> 
+                            <p class="text-orange-600 font-bold text-xl">$5.151</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/412.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">BANCO DE HERRAMIENTAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/412</p> 
+                            <p class="text-orange-600 font-bold text-xl">$17.310</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/413.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CASCO Y HERAMIENTAS</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/413</p> 
+                            <p class="text-orange-600 font-bold text-xl">$4.159</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/414.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CASCO A GRANEL EN DISPLEY</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/414</p> 
+                            <p class="text-orange-600 font-bold text-xl">$1.906</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/674.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET MINI CONTRUIR 1</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/674</p> 
+                            <p class="text-orange-600 font-bold text-xl">$22.276</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/675.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">SET MINI CONSTRUIR 2</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/675</p> 
+                            <p class="text-orange-600 font-bold text-xl">$39.674</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+        
+        <section id="linea-jardin" class="section hidden">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"> 
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-800 mb-8 sm:mb-10 lg:mb-12 text-center">Línea Jardín</h2> 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+
+                        <img src="bm/549.jpg" alt="Puzzle Patagonia" class="h-48 w-full object-cover"> 
+                        <div class="p-3 sm:p-4"> 
+                            <h3 class="font-semibold text-base sm:text-lg mb-1 sm:mb-2">CARRETILLA EN BOLSA</h3> 
+                            <p class="text-gray-600 text-xs sm:text-sm mb-2">codigo: dur/549</p> 
+                            <p class="text-orange-600 font-bold text-lg sm:text-xl">$16.447</p> 
+                        </div> 
+                    </div> 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/601.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">CARRETILLA COMPLETA BOLSA</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/601</p> 
+                            <p class="text-orange-600 font-bold text-xl">$22.602</p> 
+                        </div> 
+                    </div> 
+                      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"> 
+                        <img src="bm/655.jpg" alt="Puzzle Numeros" class="h-48 w-full object-cover"> 
+                        <div class="p-4"> 
+                            <h3 class="font-semibold text-lg mb-2">WAGON GIGANTE</h3> 
+                            <p class="text-gray-600 text-sm mb-2">codigo: dur/655</p> 
+                            <p class="text-orange-600 font-bold text-xl">$28.422</p> 
+                        </div> 
+                    </div> 
+            </div>
+        </section>
+
+        <section id="contacto" class="section hidden bg-gray-100 py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-orange-800 mb-8 text-center">¡Contáctanos!</h2>
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 text-lg mb-6">Estamos aquí para ayudarte. No dudes en contactarnos a través de nuestros canales o visitando nuestro local.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-800">
+                                <i class="fab fa-whatsapp text-green-500 text-2xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">WhatsApp</p>
+                                    <a href="https://wa.me/5491136500552" class="text-blue-600 hover:underline" target="_blank">+54 9 11 3650-0552</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center text-gray-800">
+                                <i class="fab fa-instagram text-pink-500 text-2xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Instagram</p>
+                                    <a href="https://www.instagram.com/buenamandarina22/" class="text-blue-600 hover:underline" target="_blank">@buenamandarina</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center text-gray-800">
+                                <i class="fas fa-map-marker-alt text-red-500 text-2xl mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Ubicación del Local</p>
+                                    <p>cerrito 2308, Lomas de Zamora, Buenos Aires 1832</p>
+                                    <a href="https://maps.app.goo.gl/TmQhbVV3n1YaGtu49" target="_blank" class="text-blue-600 hover:underline">Ver en Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Encuéntranos</h3>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.6576837138096!2d-58.46268982463402!3d-34.82137677271452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd30678f14b2d%3A0xc2106e2a2c6d70c4!2sJugueteria%20Buena%20Mandarina!5e0!3m2!1ses-419!2sar!4v1693617309995!5m2!1ses-419!2sar" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-lg shadow-md">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
