@@ -12,16 +12,19 @@ body {
     line-height: 1.5;
 }
 
-/* --- BARRA DE NAVEGACIÓN --- */
+/* --- BARRA DE NAVEGACIÓN (OPTIMIZADA PARA GITHUB) --- */
 .nav-link {
     color: white;
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    white-space: nowrap; /* Evita que el texto se amontone en GitHub */
     transition: all 0.3s ease;
-    border-radius: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.2px;
     cursor: pointer;
 }
 
@@ -29,10 +32,21 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+@media (min-width: 1024px) {
+    .hidden.lg\:flex {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap; /* Fuerza una sola línea en PC */
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2px;
+    }
+}
+
 /* --- MEJORA DEL DESPLEGABLE --- */
 .dropdown {
     position: relative;
-    padding-bottom: 15px; /* Crea un puente invisible para que no se cierre al bajar el mouse */
+    padding-bottom: 15px;
     margin-bottom: -15px;
 }
 
@@ -41,13 +55,13 @@ body {
     top: 100%;
     left: 0;
     background-color: white;
-    min-width: 240px; /* Un poco más ancho para mayor comodidad */
+    min-width: 220px;
     display: none;
     flex-direction: column;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     border-radius: 12px;
     padding: 8px 0;
-    z-index: 100;
+    z-index: 1000;
     border: 1px solid #eee;
 }
 
@@ -56,22 +70,21 @@ body {
     animation: slideUp 0.3s ease;
 }
 
-/* Hacemos que CADA opción sea un botón grande y fácil de tocar */
 .dropdown-menu a {
     padding: 12px 20px;
     color: #4b5563;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
-    display: block; /* Ocupa todo el ancho */
+    display: block;
     border-bottom: 1px solid #f9fafb;
 }
 
 .dropdown-menu a:hover {
-    background-color: #ea580c; /* Fondo naranja al pasar el mouse */
-    color: white !important; /* Letra blanca */
-    padding-left: 28px; /* Pequeño efecto de movimiento */
+    background-color: #ea580c;
+    color: white !important;
+    padding-left: 25px;
 }
 
 @keyframes slideUp {
@@ -92,25 +105,21 @@ body {
     padding-bottom: 8px;
 }
 
-/* --- GRILLA DE PRODUCTOS (CAMBIO A 4 COLUMNAS) --- */
+/* --- GRILLA DE PRODUCTOS --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 por fila en móviles para que no sean mini */
-    gap: 1.5rem; /* Espacio entre tarjetas */
+    grid-template-columns: repeat(2, 1fr); /* 2 por fila en móvil */
+    gap: 1.5rem;
     padding: 10px;
 }
 
-/* Tablets (3 columnas) */
 @media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .grid-container { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* PC (Exactamente 4 por fila para que se vean más grandes) */
 @media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr); 
+    .grid-container { 
+        grid-template-columns: repeat(4, 1fr); /* 4 por fila en PC */
         gap: 2rem;
     }
 }
@@ -136,7 +145,7 @@ body {
 }
 
 .product-card img {
-    height: 240px; /* Aumentado de 160px a 240px para que se luzca el juguete */
+    height: 240px;
     width: 100%;
     object-fit: contain;
     margin-bottom: 15px;
@@ -180,23 +189,23 @@ body {
     border-radius: 10px;
 }
 
-/* --- ESTADOS --- */
+/* --- ESTADOS Y ANIMACIONES --- */
 .section { animation: fadeIn 0.5s ease-out; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .hidden { display: none; }
 
-/* Estilo extra para el botón de subir */
+/* --- BOTÓN VOLVER ARRIBA --- */
 #btn-subir {
     cursor: pointer;
     border: none;
     outline: none;
-    /* Evitamos que moleste si está oculto */
-    pointer-events: none; 
+    z-index: 9999;
+    pointer-events: none; /* Inactivo por defecto */
 }
 
-/* Efecto de rebote suave al aparecer */
 #btn-subir[style*="opacity: 1"] {
     animation: bounceIn 0.5s ease;
+    pointer-events: auto; /* Activo cuando es visible */
 }
 
 @keyframes bounceIn {
