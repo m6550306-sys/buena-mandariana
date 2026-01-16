@@ -3,29 +3,27 @@ const URL_EXCEL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAzq0VBhcH3p
 document.addEventListener('DOMContentLoaded', () => {
     cargarExcel();
     
-    // Configuración Menú Móvil
+    // Menú móvil
     const btnMobile = document.getElementById('mobile-menu-button');
     if(btnMobile) {
         btnMobile.onclick = () => document.getElementById('mobile-menu').classList.toggle('hidden');
     }
 
-    // Configuración Botón Subir (se inicializa al cargar el DOM)
+    // Botón Volver Arriba
     const btnSubir = document.getElementById('btn-subir');
-    if(btnSubir) {
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btnSubir.style.opacity = "1";
-                btnSubir.style.pointerEvents = "auto";
-            } else {
-                btnSubir.style.opacity = "0";
-                btnSubir.style.pointerEvents = "none";
-            }
-        };
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btnSubir.style.opacity = "1";
+            btnSubir.style.pointerEvents = "auto";
+        } else {
+            btnSubir.style.opacity = "0";
+            btnSubir.style.pointerEvents = "none";
+        }
+    };
 
-        btnSubir.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
+    btnSubir.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 });
 
 function cargarExcel() {
@@ -35,14 +33,8 @@ function cargarExcel() {
         skipEmptyLines: true,
         complete: (results) => {
             let datos = results.data;
-
-            // ORDENAR DE MENOR A MAYOR POR ARTÍCULO (Usando parseFloat para lógica exacta)
-            datos.sort((a, b) => {
-                const artA = parseFloat(a['ART. N°']) || 0;
-                const artB = parseFloat(b['ART. N°']) || 0;
-                return artA - artB;
-            });
-
+            // Ordenamiento correcto por número de artículo
+            datos.sort((a, b) => (parseFloat(a['ART. N°']) || 0) - (parseFloat(b['ART. N°']) || 0));
             renderizar(datos);
         }
     });
@@ -75,8 +67,7 @@ function renderizar(data) {
     data.forEach(item => {
         const cat = (item['CATEGORIA'] || '').trim().toUpperCase();
         const art = (item['ART. N°'] || '').trim();
-        const idContenedor = contenedores[cat];
-        const container = document.getElementById(idContenedor);
+        const container = document.getElementById(contenedores[cat]);
 
         if (container && art) {
             let precioLimpio = (item['PRECIO'] || '').toString().replace('$', '').trim();
@@ -84,10 +75,7 @@ function renderizar(data) {
             
             container.innerHTML += `
                 <div class="product-card" style="display: none;">
-                    <img src="bm/${art}.jpg" 
-                         alt="${nombre}"
-                         onload="this.parentElement.style.display='flex'"
-                         onerror="this.parentElement.remove()">
+                    <img src="bm/${art}.jpg" alt="${nombre}" onload="this.parentElement.style.display='flex'" onerror="this.parentElement.remove()">
                     <div class="card-content">
                         <h3>${nombre}</h3>
                         <p class="art-code">ARTÍCULO: ${art}</p>
@@ -103,9 +91,6 @@ function showSection(id) {
     document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
     const target = document.getElementById(id);
     if(target) target.classList.remove('hidden');
-    
-    const mobileMenu = document.getElementById('mobile-menu');
-    if(mobileMenu) mobileMenu.classList.add('hidden');
-    
+    document.getElementById('mobile-menu').classList.add('hidden');
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
