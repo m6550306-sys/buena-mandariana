@@ -3,11 +3,9 @@ const URL_EXCEL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAzq0VBhcH3p
 document.addEventListener('DOMContentLoaded', () => {
     cargarExcel();
     
-    // Botón menú móvil
     const btnMobile = document.getElementById('mobile-menu-button');
     if(btnMobile) btnMobile.onclick = () => document.getElementById('mobile-menu').classList.toggle('hidden');
 
-    // Botón subir
     const btnSubir = document.getElementById('btn-subir');
     window.onscroll = () => {
         btnSubir.style.opacity = window.scrollY > 300 ? "1" : "0";
@@ -16,12 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSubir.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Función nueva para desplegar categorías en móvil
 function toggleSubmenu(id) {
     const sub = document.getElementById(id);
     const icono = sub.parentElement.querySelector('i');
-    
-    // Cerrar otros abiertos (opcional, para limpieza)
     if (sub.classList.contains('hidden')) {
         sub.classList.remove('hidden');
         icono.classList.replace('fa-plus', 'fa-minus');
@@ -74,15 +69,21 @@ function renderizar(data) {
         const container = document.getElementById(contenedores[cat]);
 
         if (container && art) {
-            container.innerHTML += `
-                <div class="product-card" style="display: none;">
-                    <img src="bm/${art}.jpg" alt="${item['DESCRIPCION DEL PRODUCTO']}" onload="this.parentElement.style.display='flex'" onerror="this.parentElement.remove()">
+            const nombre = item['DESCRIPCION DEL PRODUCTO'] || 'Producto Duravit';
+            
+            // EL TRUCO: Si falla .jpg, intenta .JPG. Si falla .JPG, intenta .jpeg.
+            const cardHtml = `
+                <div class="product-card">
+                    <img src="bm/${art}.jpg" 
+                         alt="${nombre}" 
+                         onerror="this.onerror=function(){this.onerror=function(){this.parentElement.remove()};this.src='bm/${art}.jpeg'};this.src='bm/${art}.JPG';">
                     <div class="card-content">
                         <p class="art-code">ART. ${art}</p>
-                        <h3>${item['DESCRIPCION DEL PRODUCTO']}</h3>
+                        <h3>${nombre}</h3>
                         <p class="price">$${item['PRECIO'] || ''}</p>
                     </div>
                 </div>`;
+            container.innerHTML += cardHtml;
         }
     });
 }
