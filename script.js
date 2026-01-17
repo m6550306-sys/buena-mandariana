@@ -3,18 +3,33 @@ const URL_EXCEL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAzq0VBhcH3p
 document.addEventListener('DOMContentLoaded', () => {
     cargarExcel();
     
-    // Menú móvil
+    // Botón menú móvil
     const btnMobile = document.getElementById('mobile-menu-button');
     if(btnMobile) btnMobile.onclick = () => document.getElementById('mobile-menu').classList.toggle('hidden');
 
-    // Botón Volver Arriba
+    // Botón subir
     const btnSubir = document.getElementById('btn-subir');
     window.onscroll = () => {
-        if (window.scrollY > 300) { btnSubir.style.opacity = "1"; btnSubir.style.pointerEvents = "auto"; }
-        else { btnSubir.style.opacity = "0"; btnSubir.style.pointerEvents = "none"; }
+        btnSubir.style.opacity = window.scrollY > 300 ? "1" : "0";
+        btnSubir.style.pointerEvents = window.scrollY > 300 ? "auto" : "none";
     };
     btnSubir.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Función nueva para desplegar categorías en móvil
+function toggleSubmenu(id) {
+    const sub = document.getElementById(id);
+    const icono = sub.parentElement.querySelector('i');
+    
+    // Cerrar otros abiertos (opcional, para limpieza)
+    if (sub.classList.contains('hidden')) {
+        sub.classList.remove('hidden');
+        icono.classList.replace('fa-plus', 'fa-minus');
+    } else {
+        sub.classList.add('hidden');
+        icono.classList.replace('fa-minus', 'fa-plus');
+    }
+}
 
 function cargarExcel() {
     Papa.parse(URL_EXCEL, {
@@ -59,13 +74,12 @@ function renderizar(data) {
         const container = document.getElementById(contenedores[cat]);
 
         if (container && art) {
-            const nombre = item['DESCRIPCION DEL PRODUCTO'] || 'Producto Duravit';
             container.innerHTML += `
                 <div class="product-card" style="display: none;">
-                    <img src="bm/${art}.jpg" alt="${nombre}" onload="this.parentElement.style.display='flex'" onerror="this.parentElement.remove()">
+                    <img src="bm/${art}.jpg" alt="${item['DESCRIPCION DEL PRODUCTO']}" onload="this.parentElement.style.display='flex'" onerror="this.parentElement.remove()">
                     <div class="card-content">
                         <p class="art-code">ART. ${art}</p>
-                        <h3>${nombre}</h3>
+                        <h3>${item['DESCRIPCION DEL PRODUCTO']}</h3>
                         <p class="price">$${item['PRECIO'] || ''}</p>
                     </div>
                 </div>`;
