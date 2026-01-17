@@ -48,33 +48,62 @@
                 <a href="#" onclick="showSection('contacto')" class="nav-link">Contacto</a>
             </div>
 
-            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl p-2"><i class="fas fa-bars"></i></button>
+            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl p-2">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-orange-700 p-4 space-y-1">
+        <div id="mobile-menu" class="hidden lg:hidden bg-orange-700 p-4 space-y-1 overflow-y-auto max-h-[85vh]">
             <a href="#" onclick="showSection('inicio')" class="block text-white p-3 border-b border-orange-500 font-bold">INICIO</a>
             <a href="#" onclick="showSection('puzzles')" class="block text-white p-3 border-b border-orange-500">PUZZLES</a>
             <a href="#" onclick="showSection('didacticos')" class="block text-white p-3 border-b border-orange-500">DIDÁCTICOS</a>
+            
+            <div>
+                <button onclick="toggleSubmenu('sub-rodados')" class="w-full text-left text-white p-3 border-b border-orange-500 flex justify-between items-center font-bold">
+                    RODADOS <i class="fas fa-plus text-xs"></i>
+                </button>
+                <div id="sub-rodados" class="hidden bg-orange-800">
+                    <a href="#" onclick="showSection('rodados-chicos')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Rodados Chicos</a>
+                    <a href="#" onclick="showSection('rodados-medianos')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Rodados Medianos</a>
+                    <a href="#" onclick="showSection('rodados-grandes')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Rodados Grandes</a>
+                </div>
+            </div>
+
             <a href="#" onclick="showSection('pistas')" class="block text-white p-3 border-b border-orange-500">ESTACIÓN DE SERVICIO</a>
             <a href="#" onclick="showSection('juegos-mesa')" class="block text-white p-3 border-b border-orange-500">JUEGOS DE MESA</a>
             <a href="#" onclick="showSection('playa')" class="block text-white p-3 border-b border-orange-500">PLAYA</a>
-            <a href="#" onclick="showSection('contacto')" class="block text-white bg-orange-900 p-3 mt-4 rounded-lg text-center font-bold">CONTACTO</a>
+
+            <div>
+                <button onclick="toggleSubmenu('sub-lineas')" class="w-full text-left text-white p-3 border-b border-orange-500 flex justify-between items-center font-bold">
+                    LÍNEAS DE JUEGOS <i class="fas fa-plus text-xs"></i>
+                </button>
+                <div id="sub-lineas" class="hidden bg-orange-800">
+                    <a href="#" onclick="showSection('hogar')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Hogar</a>
+                    <a href="#" onclick="showSection('masas')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Masas</a>
+                    <a href="#" onclick="showSection('blocks')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Blocks</a>
+                    <a href="#" onclick="showSection('minis')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Minis</a>
+                    <a href="#" onclick="showSection('taller')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Taller</a>
+                    <a href="#" onclick="showSection('jardin')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Jardín</a>
+                </div>
+            </div>
+
+            <a href="#" onclick="showSection('contacto')" class="block text-white bg-orange-900 p-3 mt-4 rounded-lg font-black text-center">CONTACTO</a>
         </div>
     </nav>
 
     <main class="pt-16">
         <section id="inicio" class="section active relative h-[80vh] flex items-center justify-center">
             <img src="bm/fondo web.jpeg" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div class="relative z-10 text-center text-white p-6">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="relative z-10 text-center text-white p-8 bg-black/50 rounded-3xl backdrop-blur-sm max-w-2xl mx-4">
                 <h1 class="text-4xl md:text-6xl font-black mb-2 uppercase italic">Buena Mandarina</h1>
-                <p class="text-lg font-bold mb-6 text-orange-200">Despertando sonrisas, creando recuerdos.</p>
-                <button onclick="showSection('novedades')" class="bg-orange-600 hover:bg-orange-500 text-white px-8 py-4 rounded-full text-xl font-black shadow-xl transition-all">VER NOVEDADES</button>
+                <p class="text-lg md:text-xl font-bold mb-6 italic text-orange-200">Despertando sonrisas, creando recuerdos.</p>
+                <button onclick="showSection('novedades')" class="bg-orange-600 hover:bg-orange-500 text-white px-10 py-4 rounded-full text-xl font-black shadow-2xl">VER NOVEDADES</button>
             </div>
         </section>
 
         <section id="novedades" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title text-3xl font-bold mb-6 text-orange-800">Novedades</h2><div id="contenedor-novedades" class="grid-container"></div></section>
-        <section id="puzzles" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title text-3xl font-bold mb-6 text-orange-800">Puzzles</h2><div id="contenedor-puzzles" class="grid-container"></div></section>
+        <section id="puzzles" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Puzzles</h2><div id="contenedor-puzzles" class="grid-container"></div></section>
         <section id="didacticos" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Didácticos</h2><div id="contenedor-didacticos" class="grid-container"></div></section>
         <section id="pistas" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Estación de Servicio</h2><div id="contenedor-pistas" class="grid-container"></div></section>
         <section id="juegos-mesa" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Juegos de Mesa</h2><div id="contenedor-juegos-mesa" class="grid-container"></div></section>
@@ -91,13 +120,22 @@
 
         <section id="contacto" class="section hidden bg-white py-16 text-center px-4">
             <h2 class="text-3xl font-black text-orange-800 mb-6 uppercase">¡Contáctanos!</h2>
-            <p class="font-bold mb-8">Cerrito 2308, Lomas de Zamora</p>
+            <p class="font-bold mb-4 italic">Cerrito 2308, Lomas de Zamora</p>
+            <div class="max-w-xl mx-auto h-64 rounded-2xl overflow-hidden shadow-lg border border-gray-200 mb-8">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.332306354676!2d-58.4124!3d-34.7645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ1JzUyLjIiUyA1OMKwMjQnNDQuNiJX!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <a href="https://wa.me/5491136500552" target="_blank" class="bg-green-500 text-white p-4 rounded-xl font-bold"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
-                <a href="https://www.instagram.com/buenamandarina22/" target="_blank" class="bg-pink-600 text-white p-4 rounded-xl font-bold"><i class="fab fa-instagram mr-2"></i> Instagram</a>
+                <a href="https://wa.me/5491136500552" target="_blank" class="bg-green-500 text-white p-3 rounded-xl font-bold shadow-md"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/buenamandarina22/" target="_blank" class="bg-pink-600 text-white p-3 rounded-xl font-bold shadow-md"><i class="fab fa-instagram mr-2"></i> Instagram</a>
             </div>
         </section>
     </main>
+
+    <button id="btn-subir" class="fixed bottom-6 right-6 bg-orange-600 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center opacity-0 transition-opacity">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
