@@ -1,215 +1,68 @@
-/* --- CONFIGURACIÓN GENERAL --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* CONFIGURACIÓN GENERAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; overflow-x: hidden; }
 
-body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f9fafb;
-    color: #1f2937;
-    line-height: 1.5;
-}
-
-/* --- BARRA DE NAVEGACIÓN (OPTIMIZADA PARA GITHUB) --- */
+/* NAVEGACIÓN PC (Anti-Amontonamiento) */
 .nav-link {
     color: white;
     padding: 0.4rem 0.6rem;
     font-size: 0.72rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    white-space: nowrap; /* Evita que el texto se amontone en GitHub */
-    transition: all 0.3s ease;
+    white-space: nowrap;
+    transition: all 0.2s;
     border-radius: 6px;
     display: flex;
     align-items: center;
-    letter-spacing: -0.2px;
-    cursor: pointer;
 }
-
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+.nav-link:hover { background: rgba(255,255,255,0.2); }
 
 @media (min-width: 1024px) {
-    .hidden.lg\:flex {
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: nowrap; /* Fuerza una sola línea en PC */
-        justify-content: flex-end;
-        align-items: center;
-        gap: 2px;
-    }
+    .hidden.lg\:flex { display: flex !important; flex-wrap: nowrap; gap: 2px; }
 }
 
-/* --- MEJORA DEL DESPLEGABLE --- */
-.dropdown {
-    position: relative;
-    padding-bottom: 15px;
-    margin-bottom: -15px;
-}
-
+/* DESPLEGABLES */
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
-    min-width: 220px;
+    background: white;
+    min-width: 200px;
     display: none;
     flex-direction: column;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    border-radius: 12px;
-    padding: 8px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 5px 0;
     z-index: 1000;
-    border: 1px solid #eee;
 }
+.dropdown:hover .dropdown-menu { display: flex; }
+.dropdown-menu a { padding: 10px 20px; color: #444; font-size: 0.85rem; text-decoration: none; font-weight: 600; }
+.dropdown-menu a:hover { background: #ea580c; color: white; }
 
-.dropdown:hover .dropdown-menu {
-    display: flex;
-    animation: slideUp 0.3s ease;
-}
-
-.dropdown-menu a {
-    padding: 12px 20px;
-    color: #4b5563;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: block;
-    border-bottom: 1px solid #f9fafb;
-}
-
-.dropdown-menu a:hover {
-    background-color: #ea580c;
-    color: white !important;
-    padding-left: 25px;
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- TÍTULOS DE SECCIÓN --- */
-.section-title {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: #9a3412;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    font-style: italic;
-    border-bottom: 5px solid #f97316;
-    display: inline-block;
-    padding-bottom: 8px;
-}
-
-/* --- GRILLA DE PRODUCTOS --- */
+/* GRILLA Y TARJETAS */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 por fila en móvil */
-    gap: 1.5rem;
-    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
+@media (min-width: 1024px) { .grid-container { grid-template-columns: repeat(4, 1fr); gap: 2rem; } }
 
-@media (min-width: 768px) {
-    .grid-container { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (min-width: 1024px) {
-    .grid-container { 
-        grid-template-columns: repeat(4, 1fr); /* 4 por fila en PC */
-        gap: 2rem;
-    }
-}
-
-/* --- TARJETA DE PRODUCTO --- */
 .product-card {
     background: white;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 15px;
+    padding: 15px;
     border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: 0.3s;
     height: 100%;
 }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.product-card img { height: 180px; width: 100%; object-fit: contain; margin-bottom: 10px; }
+.product-card h3 { font-size: 0.9rem; font-weight: 800; text-align: center; min-height: 2.5em; color: #333; text-transform: uppercase; }
+.price { font-size: 1.5rem; font-weight: 900; color: #ea580c; margin-top: auto; }
+.art-code { font-size: 0.7rem; color: #999; font-weight: bold; margin-bottom: 5px; }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-color: #fdba74;
-}
-
-.product-card img {
-    height: 240px;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.card-content {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.product-card h3 {
-    font-size: 1rem;
-    font-weight: 800;
-    color: #374151;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    min-height: 2.4em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.art-code {
-    color: #9ca3af;
-    font-size: 0.75rem;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-.price {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: #ea580c;
-    margin-top: auto;
-    background: #fff7ed;
-    padding: 8px;
-    border-radius: 10px;
-}
-
-/* --- ESTADOS Y ANIMACIONES --- */
-.section { animation: fadeIn 0.5s ease-out; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.section-title { font-size: 2rem; font-weight: 900; color: #9a3412; border-bottom: 4px solid #f97316; display: inline-block; margin-bottom: 2rem; font-style: italic; }
 .hidden { display: none; }
-
-/* --- BOTÓN VOLVER ARRIBA --- */
-#btn-subir {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    z-index: 9999;
-    pointer-events: none; /* Inactivo por defecto */
-}
-
-#btn-subir[style*="opacity: 1"] {
-    animation: bounceIn 0.5s ease;
-    pointer-events: auto; /* Activo cuando es visible */
-}
-
-@keyframes bounceIn {
-    0% { transform: scale(0); }
-    70% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
