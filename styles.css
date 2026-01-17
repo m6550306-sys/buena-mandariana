@@ -1,8 +1,7 @@
-/* CONFIGURACIÓN GENERAL */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; overflow-x: hidden; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; }
 
-/* NAVEGACIÓN PC (Anti-Amontonamiento) */
+/* PC NAV */
 .nav-link {
     color: white;
     padding: 0.4rem 0.6rem;
@@ -10,18 +9,13 @@ body { font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; overflow-
     font-weight: 800;
     text-transform: uppercase;
     white-space: nowrap;
-    transition: all 0.2s;
     border-radius: 6px;
-    display: flex;
-    align-items: center;
+    cursor: pointer;
 }
-.nav-link:hover { background: rgba(255,255,255,0.2); }
-
 @media (min-width: 1024px) {
     .hidden.lg\:flex { display: flex !important; flex-wrap: nowrap; gap: 2px; }
 }
 
-/* DESPLEGABLES */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -32,14 +26,13 @@ body { font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; overflow-
     flex-direction: column;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     border-radius: 8px;
-    padding: 5px 0;
     z-index: 1000;
 }
 .dropdown:hover .dropdown-menu { display: flex; }
-.dropdown-menu a { padding: 10px 20px; color: #444; font-size: 0.85rem; text-decoration: none; font-weight: 600; }
+.dropdown-menu a { padding: 12px 20px; color: #333; font-size: 0.85rem; text-decoration: none; font-weight: bold; border-bottom: 1px solid #f0f0f0; }
 .dropdown-menu a:hover { background: #ea580c; color: white; }
 
-/* GRILLA Y TARJETAS */
+/* GRILLA Y PRODUCTOS */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -52,17 +45,14 @@ body { font-family: 'Segoe UI', sans-serif; background-color: #f9fafb; overflow-
     border-radius: 15px;
     padding: 15px;
     border: 1px solid #eee;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.3s;
     height: 100%;
 }
-.product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.product-card img { height: 180px; width: 100%; object-fit: contain; margin-bottom: 10px; }
-.product-card h3 { font-size: 0.9rem; font-weight: 800; text-align: center; min-height: 2.5em; color: #333; text-transform: uppercase; }
-.price { font-size: 1.5rem; font-weight: 900; color: #ea580c; margin-top: auto; }
-.art-code { font-size: 0.7rem; color: #999; font-weight: bold; margin-bottom: 5px; }
+.product-card img { height: 160px; width: 100%; object-fit: contain; margin-bottom: 10px; }
+.product-card h3 { font-size: 0.85rem; font-weight: 800; text-align: center; color: #333; text-transform: uppercase; min-height: 2.5em; }
+.price { font-size: 1.4rem; font-weight: 900; color: #ea580c; margin-top: auto; }
+.art-code { font-size: 0.65rem; color: #aaa; font-weight: bold; }
 
-.section-title { font-size: 2rem; font-weight: 900; color: #9a3412; border-bottom: 4px solid #f97316; display: inline-block; margin-bottom: 2rem; font-style: italic; }
+.section-title { font-size: 1.8rem; font-weight: 900; color: #9a3412; border-bottom: 4px solid #f97316; margin-bottom: 2rem; display: inline-block; font-style: italic; }
 .hidden { display: none; }
