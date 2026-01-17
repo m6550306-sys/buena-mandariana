@@ -3,27 +3,32 @@ const URL_EXCEL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAzq0VBhcH3p
 document.addEventListener('DOMContentLoaded', () => {
     cargarExcel();
     
-    // Menú móvil
+    // Configuración del Menú Móvil
     const btnMobile = document.getElementById('mobile-menu-button');
     if(btnMobile) {
-        btnMobile.onclick = () => document.getElementById('mobile-menu').classList.toggle('hidden');
+        btnMobile.onclick = () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        };
     }
 
-    // Botón Volver Arriba
+    // Configuración del Botón "Volver Arriba"
     const btnSubir = document.getElementById('btn-subir');
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            btnSubir.style.opacity = "1";
-            btnSubir.style.pointerEvents = "auto";
-        } else {
-            btnSubir.style.opacity = "0";
-            btnSubir.style.pointerEvents = "none";
-        }
-    };
+    if(btnSubir) {
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btnSubir.style.opacity = "1";
+                btnSubir.style.pointerEvents = "auto";
+            } else {
+                btnSubir.style.opacity = "0";
+                btnSubir.style.pointerEvents = "none";
+            }
+        };
 
-    btnSubir.onclick = function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+        btnSubir.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
 });
 
 function cargarExcel() {
@@ -33,8 +38,14 @@ function cargarExcel() {
         skipEmptyLines: true,
         complete: (results) => {
             let datos = results.data;
-            // Ordenamiento correcto por número de artículo
-            datos.sort((a, b) => (parseFloat(a['ART. N°']) || 0) - (parseFloat(b['ART. N°']) || 0));
+
+            // Ordenamiento numérico preciso por número de artículo
+            datos.sort((a, b) => {
+                const artA = parseFloat(a['ART. N°']) || 0;
+                const artB = parseFloat(b['ART. N°']) || 0;
+                return artA - artB;
+            });
+
             renderizar(datos);
         }
     });
@@ -59,6 +70,7 @@ function renderizar(data) {
         'LINEA TALLER': 'contenedor-taller'
     };
 
+    // Limpiar contenedores antes de cargar
     Object.values(contenedores).forEach(id => {
         const el = document.getElementById(id);
         if(el) el.innerHTML = '';
@@ -73,9 +85,13 @@ function renderizar(data) {
             let precioLimpio = (item['PRECIO'] || '').toString().replace('$', '').trim();
             const nombre = item['DESCRIPCION DEL PRODUCTO'] || 'Producto Duravit';
             
+            // Crea la tarjeta: se muestra solo si la imagen carga correctamente
             container.innerHTML += `
                 <div class="product-card" style="display: none;">
-                    <img src="bm/${art}.jpg" alt="${nombre}" onload="this.parentElement.style.display='flex'" onerror="this.parentElement.remove()">
+                    <img src="bm/${art}.jpg" 
+                         alt="${nombre}" 
+                         onload="this.parentElement.style.display='flex'" 
+                         onerror="this.parentElement.remove()">
                     <div class="card-content">
                         <h3>${nombre}</h3>
                         <p class="art-code">ARTÍCULO: ${art}</p>
@@ -88,9 +104,17 @@ function renderizar(data) {
 }
 
 function showSection(id) {
+    // Ocultar todas las secciones
     document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+    
+    // Mostrar la sección seleccionada
     const target = document.getElementById(id);
     if(target) target.classList.remove('hidden');
-    document.getElementById('mobile-menu').classList.add('hidden');
+    
+    // Cerrar menú móvil si está abierto
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenu) mobileMenu.classList.add('hidden');
+    
+    // Volver al inicio de la página
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
