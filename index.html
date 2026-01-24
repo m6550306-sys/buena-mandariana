@@ -3,139 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juguetería Buena Mandarina | Mayorista Duravit</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <title>Buena Mandarina - Tienda Infantil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo-container">
+                <a href="#" data-categoria="inicio" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+                    <img src="fotos/mi-logo.jpeg" alt="Logo" class="main-logo">
+                    <h1 class="brand-title">Buena Mandarina</h1>
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="input-buscador" placeholder="¿Qué estás buscando?">
+                </div>
+            </div>
+        </div>
+<nav class="nav-menu">
+    <ul>
+        <li><a href="#" class="active" data-categoria="inicio">Inicio</a></li>
+         <li><a href="#" data-categoria="Novedades">Novedades</a></li>
+        <li><a href="#" data-categoria="Ropa">Ropa</a></li>
+        <li><a href="#" data-categoria="Electrónica">Electrónica</a></li>
+        <li><a href="#" data-categoria="Juguetes">Juguetes</a></li>
+        <li><a href="#" data-categoria="Decoración">Deco</a></li> 
+        <li><a href="#" data-categoria="Cuidado Personal">Cuidado Personal</a></li>
+    </ul> 
+</nav>
+    </header>
 
-    <nav class="bg-orange-600 fixed w-full z-50 shadow-md">
-        <div class="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-16">
-            <a href="#" onclick="showSection('inicio')" class="flex items-center">
-                <img src="bm/logo.jpeg" alt="Logo" class="h-10 rounded-full bg-white p-1">
-            </a>
-
-            <div class="hidden lg:flex items-center space-x-1">
-                <a href="#" onclick="showSection('inicio')" class="nav-link">Inicio</a>
-                <a href="#" onclick="showSection('puzzles')" class="nav-link">Puzzles</a>
-                <a href="#" onclick="showSection('didacticos')" class="nav-link">Didácticos</a>
-                <a href="#" onclick="showSection('pistas')" class="nav-link">Estación de Servicio</a>
-                <a href="#" onclick="showSection('juegos-mesa')" class="nav-link">Juegos de Mesa</a>
-                <a href="#" onclick="showSection('playa')" class="nav-link">Playa</a>
-
-                <div class="relative dropdown">
-                    <button class="nav-link flex items-center">Rodados <i class="fas fa-caret-down ml-1"></i></button>
-                    <div class="dropdown-menu">
-                        <a href="#" onclick="showSection('rodados-chicos')">Rodados Chicos</a>
-                        <a href="#" onclick="showSection('rodados-medianos')">Rodados Medianos</a>
-                        <a href="#" onclick="showSection('rodados-grandes')">Rodados Grandes</a>
+    <main>
+        <section id="seccion-inicio">
+            <div class="slider-container">
+                <div class="slider" id="slider-box"></div>
+                <button onclick="moveSlide(-1)" class="btn-nav-slider left">❮</button>
+                <button onclick="moveSlide(1)" class="btn-nav-slider right">❯</button>
+            </div>
+            <section class="section-contacto-split">
+                <div class="contacto-container">
+                    <div class="contacto-info">
+                        <img src="fotos/fondo web.jpeg" class="decoracion-contacto" alt="Decoración">
+                        <div class="info-content">
+                            <h2 style="color:var(--naranja)">Buena Mandarina</h2>
+                            <p>Despertando sonrisas, creando recuerdos.</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Cerrito 2308, Lomas de Zamora</p>
+                            <div style="margin-top:15px;">
+                                <a href="https://wa.me/5491136500552" target="_blank" class="btn-rs bg-ws"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="https://www.instagram.com/buenamandarina22/" target="_blank" class="btn-rs bg-ig"><i class="fab fa-instagram"></i> Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacto-mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.1466459146034!2d-58.3888358!3d-34.7594954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd5774a38753%3A0x6b49964f434b9d0!2sCerrito%202308%2C%20B1832%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1705880000000!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
-
-                <div class="relative dropdown">
-                    <button class="nav-link flex items-center">Líneas <i class="fas fa-caret-down ml-1"></i></button>
-                    <div class="dropdown-menu">
-                        <a href="#" onclick="showSection('hogar')">Línea Hogar</a>
-                        <a href="#" onclick="showSection('masas')">Línea Masas</a>
-                        <a href="#" onclick="showSection('blocks')">Línea Blocks</a>
-                        <a href="#" onclick="showSection('minis')">Línea Minis</a>
-                        <a href="#" onclick="showSection('taller')">Línea Taller</a>
-                        <a href="#" onclick="showSection('jardin')">Línea Jardín</a>
-                    </div>
-                </div>
-                <a href="#" onclick="showSection('contacto')" class="nav-link">Contacto</a>
-            </div>
-
-            <button id="mobile-menu-button" class="lg:hidden text-white text-2xl p-2">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden lg:hidden bg-orange-700 p-4 space-y-1 overflow-y-auto max-h-[85vh]">
-            <a href="#" onclick="showSection('inicio')" class="block text-white p-3 border-b border-orange-500 font-bold">INICIO</a>
-            <a href="#" onclick="showSection('puzzles')" class="block text-white p-3 border-b border-orange-500">PUZZLES</a>
-            <a href="#" onclick="showSection('didacticos')" class="block text-white p-3 border-b border-orange-500">DIDÁCTICOS</a>
-            
-            <div>
-                <button onclick="toggleSubmenu('sub-rodados')" class="w-full text-left text-white p-3 border-b border-orange-500 flex justify-between items-center font-bold">
-                    RODADOS <i class="fas fa-plus text-xs"></i>
-                </button>
-                <div id="sub-rodados" class="hidden bg-orange-800">
-                    <a href="#" onclick="showSection('rodados-chicos')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Rodados Chicos</a>
-                    <a href="#" onclick="showSection('rodados-medianos')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Rodados Medianos</a>
-                    <a href="#" onclick="showSection('rodados-grandes')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Rodados Grandes</a>
-                </div>
-            </div>
-
-            <a href="#" onclick="showSection('pistas')" class="block text-white p-3 border-b border-orange-500">ESTACIÓN DE SERVICIO</a>
-            <a href="#" onclick="showSection('juegos-mesa')" class="block text-white p-3 border-b border-orange-500">JUEGOS DE MESA</a>
-            <a href="#" onclick="showSection('playa')" class="block text-white p-3 border-b border-orange-500">PLAYA</a>
-
-            <div>
-                <button onclick="toggleSubmenu('sub-lineas')" class="w-full text-left text-white p-3 border-b border-orange-500 flex justify-between items-center font-bold">
-                    LÍNEAS DE JUEGOS <i class="fas fa-plus text-xs"></i>
-                </button>
-                <div id="sub-lineas" class="hidden bg-orange-800">
-                    <a href="#" onclick="showSection('hogar')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Hogar</a>
-                    <a href="#" onclick="showSection('masas')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Masas</a>
-                    <a href="#" onclick="showSection('blocks')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Blocks</a>
-                    <a href="#" onclick="showSection('minis')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Minis</a>
-                    <a href="#" onclick="showSection('taller')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Taller</a>
-                    <a href="#" onclick="showSection('jardin')" class="block text-white p-3 pl-8 border-b border-orange-600 text-sm">Línea Jardín</a>
-                </div>
-            </div>
-
-            <a href="#" onclick="showSection('contacto')" class="block text-white bg-orange-900 p-3 mt-4 rounded-lg font-black text-center">CONTACTO</a>
-        </div>
-    </nav>
-
-    <main class="pt-16">
-        <section id="inicio" class="section active relative h-[80vh] flex items-center justify-center">
-            <img src="bm/fondo web.jpeg" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="relative z-10 text-center text-white p-8 bg-black/50 rounded-3xl backdrop-blur-sm max-w-2xl mx-4">
-                <h1 class="text-4xl md:text-6xl font-black mb-2 uppercase italic">Buena Mandarina</h1>
-                <p class="text-lg md:text-xl font-bold mb-6 italic text-orange-200">Despertando sonrisas, creando recuerdos.</p>
-                <button onclick="showSection('novedades')" class="bg-orange-600 hover:bg-orange-500 text-white px-10 py-4 rounded-full text-xl font-black shadow-2xl">VER NOVEDADES</button>
-            </div>
+            </section>
         </section>
 
-        <section id="novedades" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title text-3xl font-bold mb-6 text-orange-800">Novedades</h2><div id="contenedor-novedades" class="grid-container"></div></section>
-        <section id="puzzles" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Puzzles</h2><div id="contenedor-puzzles" class="grid-container"></div></section>
-        <section id="didacticos" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Didácticos</h2><div id="contenedor-didacticos" class="grid-container"></div></section>
-        <section id="pistas" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Estación de Servicio</h2><div id="contenedor-pistas" class="grid-container"></div></section>
-        <section id="juegos-mesa" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Juegos de Mesa</h2><div id="contenedor-juegos-mesa" class="grid-container"></div></section>
-        <section id="playa" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Playa</h2><div id="contenedor-playa" class="grid-container"></div></section>
-        <section id="rodados-chicos" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Rodados Chicos</h2><div id="contenedor-rodados-chicos" class="grid-container"></div></section>
-        <section id="rodados-medianos" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Rodados Medianos</h2><div id="contenedor-rodados-medianos" class="grid-container"></div></section>
-        <section id="rodados-grandes" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Rodados Grandes</h2><div id="contenedor-rodados-grandes" class="grid-container"></div></section>
-        <section id="hogar" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Línea Hogar</h2><div id="contenedor-hogar" class="grid-container"></div></section>
-        <section id="masas" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Línea Masas</h2><div id="contenedor-masas" class="grid-container"></div></section>
-        <section id="blocks" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Línea Blocks</h2><div id="contenedor-blocks" class="grid-container"></div></section>
-        <section id="minis" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Línea Minis</h2><div id="contenedor-minis" class="grid-container"></div></section>
-        <section id="taller" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Línea Taller</h2><div id="contenedor-taller" class="grid-container"></div></section>
-        <section id="jardin" class="section hidden py-12 px-4 max-w-7xl mx-auto"><h2 class="section-title">Línea Jardín</h2><div id="contenedor-jardin" class="grid-container"></div></section>
-
-        <section id="contacto" class="section hidden bg-white py-16 text-center px-4">
-            <h2 class="text-3xl font-black text-orange-800 mb-6 uppercase">¡Contáctanos!</h2>
-            <p class="font-bold mb-4 italic">Cerrito 2308, Lomas de Zamora</p>
-            <div class="max-w-xl mx-auto h-64 rounded-2xl overflow-hidden shadow-lg border border-gray-200 mb-8">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.332306354676!2d-58.4124!3d-34.7645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ1JzUyLjIiUyA1OMKwMjQnNDQuNiJX!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <section id="seccion-categorias" style="display: none;">
+            <div class="contenedor-volver">
+                <button id="btn-volver" class="btn-volver"></button>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <a href="https://wa.me/5491136500552" target="_blank" class="bg-green-500 text-white p-3 rounded-xl font-bold shadow-md"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
-                <a href="https://www.instagram.com/buenamandarina22/" target="_blank" class="bg-pink-600 text-white p-3 rounded-xl font-bold shadow-md"><i class="fab fa-instagram mr-2"></i> Instagram</a>
-            </div>
+            <h2 id="titulo-categoria" style="text-align:center; margin:20px;"></h2>
+            <div id="submenu-burbujas" class="submenu-container"></div>
+            <div id="product-grid-categoria" class="product-grid"></div>
         </section>
     </main>
 
-    <button id="btn-subir" class="fixed bottom-6 right-6 bg-orange-600 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center opacity-0 transition-opacity">
-        <i class="fas fa-arrow-up text-xl"></i>
-    </button>
+    <div id="modal-imagen" class="modal-overlay">
+        <span class="close-modal" onclick="cerrarModal()">×</span>
+        <button class="btn-modal-nav prev" id="modal-prev" onclick="cambiarFotoModal(-1)">❮</button>
+        <div class="modal-img-container">
+            <img class="modal-content" id="img-ampliada">
+        </div>
+        <button class="btn-modal-nav next" id="modal-next" onclick="cambiarFotoModal(1)">❯</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
