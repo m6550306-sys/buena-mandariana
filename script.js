@@ -3,36 +3,30 @@ const URL_EXCEL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAzq0VBhcH3p
 document.addEventListener('DOMContentLoaded', () => {
     cargarExcel();
     
-    // Menú móvil
+    // Configuración Menú Móvil
     const btnMobile = document.getElementById('mobile-menu-button');
     if(btnMobile) {
-        btnMobile.onclick = () => {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        btnMobile.onclick = () => document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    // Configuración Botón Subir (se inicializa al cargar el DOM)
+    const btnSubir = document.getElementById('btn-subir');
+    if(btnSubir) {
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btnSubir.style.opacity = "1";
+                btnSubir.style.pointerEvents = "auto";
+            } else {
+                btnSubir.style.opacity = "0";
+                btnSubir.style.pointerEvents = "none";
+            }
+        };
+
+        btnSubir.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }
-
-    // Botón subir
-    const btnSubir = document.getElementById('btn-subir');
-    window.onscroll = () => {
-        btnSubir.style.opacity = window.scrollY > 300 ? "1" : "0";
-        btnSubir.style.pointerEvents = window.scrollY > 300 ? "auto" : "none";
-    };
-    btnSubir.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-// Función para submenús móvil (acordeón)
-function toggleSubmenu(id) {
-    const sub = document.getElementById(id);
-    const icono = sub.parentElement.querySelector('i');
-    if (sub.classList.contains('hidden')) {
-        sub.classList.remove('hidden');
-        icono.classList.replace('fa-plus', 'fa-minus');
-    } else {
-        sub.classList.add('hidden');
-        icono.classList.replace('fa-minus', 'fa-plus');
-    }
-}
 
 function cargarExcel() {
     Papa.parse(URL_EXCEL, {
@@ -41,7 +35,14 @@ function cargarExcel() {
         skipEmptyLines: true,
         complete: (results) => {
             let datos = results.data;
-            datos.sort((a, b) => (parseFloat(a['ART. N°']) || 0) - (parseFloat(b['ART. N°']) || 0));
+
+            // ORDENAR DE MENOR A MAYOR POR ARTÍCULO (Usando parseFloat para lógica exacta)
+            datos.sort((a, b) => {
+                const artA = parseFloat(a['ART. N°']) || 0;
+                const artB = parseFloat(b['ART. N°']) || 0;
+                return artA - artB;
+            });
+
             renderizar(datos);
         }
     });
@@ -66,7 +67,6 @@ function renderizar(data) {
         'LINEA TALLER': 'contenedor-taller'
     };
 
-    // Limpiar contenedores
     Object.values(contenedores).forEach(id => {
         const el = document.getElementById(id);
         if(el) el.innerHTML = '';
@@ -75,27 +75,26 @@ function renderizar(data) {
     data.forEach(item => {
         const cat = (item['CATEGORIA'] || '').trim().toUpperCase();
         const art = (item['ART. N°'] || '').trim();
-        const container = document.getElementById(contenedores[cat]);
+        const idContenedor = contenedores[cat];
+        const container = document.getElementById(idContenedor);
 
         if (container && art) {
+            let precioLimpio = (item['PRECIO'] || '').toString().replace('$', '').trim();
             const nombre = item['DESCRIPCION DEL PRODUCTO'] || 'Producto Duravit';
             
-            // Corrección del signo de pesos (evita el $$)
-            let precioRaw = (item['PRECIO'] || '').toString().trim();
-            let precioFinal = precioRaw.startsWith('$') ? precioRaw : '$' + precioRaw;
-
-            // Lógica de carga de fotos inteligente
             container.innerHTML += `
-                <div class="product-card">
+                <div class="product-card" style="display: none;">
                     <img src="bm/${art}.jpg" 
-                         alt="${nombre}" 
-                         onerror="this.onerror=function(){this.src='bm/${art}.JPG'};this.src='bm/${art}.jpg';">
+                         alt="${nombre}"
+                         onload="this.parentElement.style.display='flex'"
+                         onerror="this.parentElement.remove()">
                     <div class="card-content">
-                        <p class="art-code">ART. ${art}</p>
                         <h3>${nombre}</h3>
-                        <p class="price">${precioFinal}</p>
+                        <p class="art-code">ARTÍCULO: ${art}</p>
+                        <p class="price">$${precioLimpio}</p>
                     </div>
-                </div>`;
+                </div>
+            `;
         }
     });
 }
@@ -105,9 +104,8 @@ function showSection(id) {
     const target = document.getElementById(id);
     if(target) target.classList.remove('hidden');
     
-    // Cerrar menús al navegar
-    document.getElementById('mobile-menu').classList.add('hidden');
-    document.querySelectorAll('[id^="sub-"]').forEach(sub => sub.classList.add('hidden'));
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileMenu) mobileMenu.classList.add('hidden');
     
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
